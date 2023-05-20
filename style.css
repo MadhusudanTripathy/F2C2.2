@@ -8,7 +8,7 @@ body{
     color: white;
     font-family:Arial, Helvetica, sans-serif;
     padding: 1rem;
-    font-size: 0.7rem;
+    /* font-size: 0.7rem; */
 }
 
 select{
@@ -23,7 +23,6 @@ select{
     width: 40%;
     display: grid;
     grid-template-columns: 3rem 7rem 12rem 10rem;
-    /* justify-content: space-between; */
     border: 1px solid white;
     padding: 0.6rem 1rem;
     border-radius: 0.5rem;
