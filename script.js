@@ -22,6 +22,10 @@ updateUserListDOM(users)
 
 function filterByProfession(){
     var value = select_button.value;
+    if(value===""){
+        window.alert('select a profession before clicking the button');
+        return;
+    }
     console.log(value);
     console.log(users);
     document.getElementById('users-list').innerHTML='';
