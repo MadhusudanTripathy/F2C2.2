@@ -4,22 +4,28 @@ let select_button = document.getElementById("select-profession");
 let filter_button = document.getElementById("filter");
 let add_user_button = document.getElementById("add-user");
 
-function filterByProfession(){
-    var value = select_button.value.toLowerCase();
-    console.log(value);
-    document.getElementById('users-list').innerHTML='';
-    users.filter(
-        (e)=>(value==="")?true:e.profession===value
-    ).forEach((e)=>{
+function updateUserListDOM(arr){
+    return arr.forEach((e)=>{
         let div_card=`
-        <div>
-            <p>${e.name}</p>
-            <p>${e.profession}</p>
-            <p>${e.age}</p>
+        <div class='user-card'>
+            <p>${e.id}</p>
+            <p>Name: ${e.name}</p>
+            <p>Profession: ${e.profession}</p>
+            <p>Age: ${e.age}</p>
         <div>
         `
         document.getElementById('users-list').innerHTML+=div_card
     });
+}
+
+function filterByProfession(){
+    var value = select_button.value;
+    console.log(value);
+    console.log(users);
+    document.getElementById('users-list').innerHTML='';
+    updateUserListDOM(users.filter(
+        (e)=>(value==="")?true:e.profession.toLowerCase()===value.toLowerCase()
+    ))
 }
 filterByProfession()
 
@@ -28,19 +34,18 @@ function addUser(){
     let name = document.getElementById('name').value;
     let profession = document.getElementById('profession').value;
     let age = document.getElementById('age').value;
+    
     let new_user = {id,name,profession,age};
-    users.push(new_user);
-    let div_card=`
-        <div>
-            <p>${name}</p>
-            <p>${profession}</p>
-            <p>${age}</p>
-        <div>
-        `
-    document.getElementById('users-list').innerHTML+=div_card
-
+    
     let select = document.getElementById("select-profession");
-    var option = document.createElement("option");
+    let option = document.createElement("option");
+    
+    //add user and update list
+    users.push(new_user);
+    document.getElementById('users-list').innerHTML='';
+    updateUserListDOM(users);
+    
+    //add option in select
     option.text = profession;
     select.add(option);
 }

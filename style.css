@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: black;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    font-size: 0.7rem;
+}
+
+select{
+    background-color: black;
+    color: white;
+    padding: 0.4rem;
+    border: 1px solid white;
+    margin-bottom: 0.5rem;
+}
+
+.user-card{
+    width: 40%;
+    display: grid;
+    grid-template-columns: 3rem 7rem 12rem 10rem;
+    /* justify-content: space-between; */
+    border: 1px solid white;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn{
+    background-color: white;
+    color: black;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    width: 8rem;
+    border: none;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+.form .group{
+    
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.group .input-group{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 0.2rem;
+    padding: 0.4rem 1rem;
+    width: 15rem;
+    outline: none;
+}
+label{
+    margin-bottom: 0.5rem;
+}

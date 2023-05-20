@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <p>Filter UI cards via their profession</p>
-    <select id="select-profession" >
+    <p style="margin-bottom: 2rem;">Filter UI cards via their profession</p>
+    <select id="select-profession">
         <option value="">Profession</option>
         <option value="Developer">Developer</option>
         <option value="Admin">Admin</option>
@@ -17,27 +19,33 @@
     <div id="users-list">
 
     </div>
-    <button onclick="filterByProfession()" id="filter">
+    <button onclick="filterByProfession()" id="filter" class="btn">
         Filter
     </button>
 
-    <p>
+    <p style="margin-top: 2rem;">
         Add a new user
     </p>
-    <label>Enter Name</label>
-    <br>  
-    <input type="text" id="name" name="name">
-    <br>  
-    <label>Enter Profession</label>
-  <br>  
-  <input type="text" id="profession" name="profession">
-  <br>  
-  <label>Enter Age</label>
-  <br>  
-  <input type="text" id="age" name="age">
-  <br>  
-  <br>  
-  <button id="add-user" onclick="addUser()">Add User</button>
-  <script src="./script.js"></script>
-</body>
+    <div class="form">
+        <div class="group">
+            <div class="input-group">
+                <label>Enter Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="input-group">
+                <label>Enter Profession</label>
+                <input type="text" id="profession" name="profession">
+            </div>
+            <div class="input-group">
+                <label>Enter Age</label>
+                <input type="text" id="age" name="age">
+            </div>
+        </div>
+        <div class="button">
+            <button class="btn" id="add-user" onclick="addUser()">Add User</button>
+        </div>
+    </div>
+        <script src="./script.js"></script>
+    </body>
+    
 </html>
