@@ -8,15 +8,17 @@ function updateUserListDOM(arr){
     return arr.forEach((e)=>{
         let div_card=`
         <div class='user-card'>
-            <p>${e.id}</p>
-            <p>Name: ${e.name}</p>
-            <p>Profession: ${e.profession}</p>
-            <p>Age: ${e.age}</p>
+        <p>${e.id}</p>
+        <p>Name: ${e.name}</p>
+        <p>Profession: ${e.profession}</p>
+        <p>Age: ${e.age}</p>
         <div>
         `
         document.getElementById('users-list').innerHTML+=div_card
     });
 }
+
+updateUserListDOM(users)
 
 function filterByProfession(){
     var value = select_button.value;
@@ -25,10 +27,9 @@ function filterByProfession(){
     document.getElementById('users-list').innerHTML='';
     updateUserListDOM(users.filter(
         (e)=>(value==="")?true:e.profession.toLowerCase()===value.toLowerCase()
-    ))
+        ))
 }
-filterByProfession()
-
+    
 function addUser(){
     let id = users.length+1;
     let name = document.getElementById('name').value;
